@@ -68,11 +68,14 @@
             // 
             // level3
             // 
+            this.level3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("level3.BackgroundImage")));
+            this.level3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.level3.Location = new System.Drawing.Point(562, 97);
             this.level3.Name = "level3";
             this.level3.Size = new System.Drawing.Size(234, 121);
             this.level3.TabIndex = 2;
             this.level3.TabStop = false;
+            this.level3.Click += new System.EventHandler(this.level3_Click);
             // 
             // level6
             // 

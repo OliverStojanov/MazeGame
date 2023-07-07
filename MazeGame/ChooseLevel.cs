@@ -12,6 +12,7 @@ namespace MazeGame
 {
     public partial class ChooseLevel : Form
     {
+        public static Form prevForm { get; set; }
         public static bool canEnterLevel2 { get; set; }
         public static bool canEnterLevel3 { get; set; }
         public static bool canEnterLevel4 { get; set; }
@@ -51,9 +52,26 @@ namespace MazeGame
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StartManu startManu = new StartManu();
-            startManu.Show();
+            //StartManu startManu = new StartManu();
+            //startManu.Show();
+            StartManu.oldChooseLevel = this;
+            prevForm.Show();
             this.Hide();
+        }
+
+        private void level3_Click(object sender, EventArgs e)
+        {
+            if (canEnterLevel3)
+            {
+                MazeLevel3 mazeLevel3 = new MazeLevel3();
+                mazeLevel3.Show();
+                MazeLevel3.prevForm = this;
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("You need to pass previous level, to enter this level", "Can't enter level");
+            }
         }
     }
 }

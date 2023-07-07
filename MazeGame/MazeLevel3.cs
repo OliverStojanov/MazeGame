@@ -10,55 +10,59 @@ using System.Windows.Forms;
 
 namespace MazeGame
 {
-    public partial class MazeLevel2 : Form
+    public partial class MazeLevel3 : Form
     {
-        public static Form prevForm { get; set; }
-        public MazeLevel2()
+        internal static Form prevForm;
+
+        public MazeLevel3()
         {
             InitializeComponent();
         }
 
-        private void MazeLevel2_KeyDown(object sender, KeyEventArgs e)
+        private void MazeLevel3_KeyDown(object sender, KeyEventArgs e)
         {
-            int stepSize = 2;
+            int stepSize = 5;
 
-            int topPosition = pictureBox3.Top;
-            int leftPosition = pictureBox3.Left;
+            int topPosition = pictureBox136.Top;
+            int leftPosition = pictureBox136.Left;
 
             switch (e.KeyCode)
             {
                 case Keys.Left:
-                    pictureBox3.Left -= stepSize;
+                    pictureBox136.Left -= stepSize;
                     break;
                 case Keys.Right:
-                    pictureBox3.Left += stepSize;
+                    pictureBox136.Left += stepSize;
                     break;
                 case Keys.Up:
-                    pictureBox3.Top -= stepSize;
+                    pictureBox136.Top -= stepSize;
                     break;
                 case Keys.Down:
-                    pictureBox3.Top += stepSize;
+                    pictureBox136.Top += stepSize;
                     break;
             }
-            if (pictureBox3.Bounds.IntersectsWith(pictureBox72.Bounds)){
+
+            if (pictureBox136.Bounds.IntersectsWith(pictureBox137.Bounds))
+            {
                 var dialogResult = MessageBox.Show("Congratulations you passed this level, choose new level", "Level passed", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes) {
+                if (dialogResult == DialogResult.Yes)
+                {
                     prevForm.Show();
-                    ChooseLevel.canEnterLevel3 = true;
+                    ChooseLevel.canEnterLevel4 = true;
                     this.Close();
                 }
-                
+
             }
 
             foreach (Control control in Controls)
             {
-                if (control is PictureBox && control != pictureBox3)
+                if (control is PictureBox && control != pictureBox136)
                 {
                     PictureBox pictureBox = (PictureBox)control;
-                    if (pictureBox3.Bounds.IntersectsWith(pictureBox.Bounds))
+                    if (pictureBox136.Bounds.IntersectsWith(pictureBox.Bounds))
                     {
-                        pictureBox3.Top = topPosition;
-                        pictureBox3.Left = leftPosition;
+                        pictureBox136.Top = topPosition;
+                        pictureBox136.Left = leftPosition;
                     }
                 }
             }
