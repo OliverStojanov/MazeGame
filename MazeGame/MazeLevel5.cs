@@ -11,44 +11,44 @@ using System.Windows.Forms;
 namespace MazeGame
 {
     [Serializable]
-    public partial class MazeLevel1 : Form
+    public partial class MazeLevel5 : Form
     {
         public static Form prevForm { get; set; }
-        public MazeLevel1()
+        public MazeLevel5()
         {
             InitializeComponent();
         }
 
-        private void MazeLevel1_KeyDown(object sender, KeyEventArgs e)
+        private void MazeLevel5_KeyDown(object sender, KeyEventArgs e)
         {
             int stepSize = 5;
 
-            int topPosition = pictureBox46.Top;
-            int leftPosition = pictureBox46.Left;
+            int topPosition = pictureBox65.Top;
+            int leftPosition = pictureBox65.Left;
 
             switch (e.KeyCode)
             {
                 case Keys.Left:
-                    pictureBox46.Left -= stepSize;
+                    pictureBox65.Left -= stepSize;
                     break;
                 case Keys.Right:
-                    pictureBox46.Left += stepSize;
+                    pictureBox65.Left += stepSize;
                     break;
                 case Keys.Up:
-                    pictureBox46.Top -= stepSize;
+                    pictureBox65.Top -= stepSize;
                     break;
                 case Keys.Down:
-                    pictureBox46.Top += stepSize;
+                    pictureBox65.Top += stepSize;
                     break;
             }
 
-            if (pictureBox46.Bounds.IntersectsWith(pictureBox47.Bounds))
+            if (pictureBox65.Bounds.IntersectsWith(pictureBox66.Bounds))
             {
                 var dialogResult = MessageBox.Show("Congratulations you passed this level, choose new level", "Level passed", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     prevForm.Show();
-                    ChooseLevel.canEnterLevel2 = true;
+                    ChooseLevel.canEnterLevel6 = true;
                     this.Close();
                 }
 
@@ -56,27 +56,16 @@ namespace MazeGame
 
             foreach (Control control in Controls)
             {
-                if (control is PictureBox && control != pictureBox46)
+                if (control is PictureBox && control != pictureBox65)
                 {
                     PictureBox pictureBox = (PictureBox)control;
-                    if (pictureBox46.Bounds.IntersectsWith(pictureBox.Bounds))
+                    if (pictureBox65.Bounds.IntersectsWith(pictureBox.Bounds))
                     {
-                        pictureBox46.Top = topPosition;
-                        pictureBox46.Left = leftPosition;
+                        pictureBox65.Top = topPosition;
+                        pictureBox65.Left = leftPosition;
                     }
                 }
             }
-            Invalidate();
         }
-
-        //private void btnQuit_Click(object sender, EventArgs e)
-        //{
-        //    var dialogResult = MessageBox.Show("Are you sure that you want to quit this level", "Quit level", MessageBoxButtons.YesNo);
-        //    if (dialogResult == DialogResult.Yes)
-        //    {
-        //        prevForm.Show();
-        //        this.Close();
-        //    }
-        //}
     }
 }

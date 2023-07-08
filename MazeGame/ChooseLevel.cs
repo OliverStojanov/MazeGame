@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace MazeGame
 {
+    [Serializable]
     public partial class ChooseLevel : Form
     {
         public static Form prevForm { get; set; }
@@ -66,6 +67,51 @@ namespace MazeGame
                 MazeLevel3 mazeLevel3 = new MazeLevel3();
                 mazeLevel3.Show();
                 MazeLevel3.prevForm = this;
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("You need to pass previous level, to enter this level", "Can't enter level");
+            }
+        }
+
+        private void level4_Click(object sender, EventArgs e)
+        {
+            if (canEnterLevel4)
+            {
+                MazeLevel4 mazeLevel4 = new MazeLevel4();
+                mazeLevel4.Show();
+                MazeLevel4.prevForm = this;
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("You need to pass previous level, to enter this level", "Can't enter level");
+            }
+        }
+
+        private void level5_Click(object sender, EventArgs e)
+        {
+            if (canEnterLevel5)
+            {
+                MazeLevel5 mazeLevel5 = new MazeLevel5();
+                mazeLevel5.Show();
+                MazeLevel5.prevForm = this;
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("You need to pass previous level, to enter this level", "Can't enter level");
+            }
+        }
+
+        private void level6_Click(object sender, EventArgs e)
+        {
+            if (canEnterLevel6)
+            {
+                MazeLevel6 mazeLevel6 = new MazeLevel6();
+                mazeLevel6.Show();
+                MazeLevel6.prevForm = this;
                 this.Hide();
             }
             else

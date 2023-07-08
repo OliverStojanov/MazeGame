@@ -70,8 +70,27 @@
     <Compile Include="MazeLevel3.Designer.cs">
       <DependentUpon>MazeLevel3.cs</DependentUpon>
     </Compile>
+    <Compile Include="MazeLevel4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MazeLevel4.Designer.cs">
+      <DependentUpon>MazeLevel4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MazeLevel5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MazeLevel5.Designer.cs">
+      <DependentUpon>MazeLevel5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MazeLevel6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MazeLevel6.Designer.cs">
+      <DependentUpon>MazeLevel6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveFileData.cs" />
     <Compile Include="StartManu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +108,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MazeLevel3.resx">
       <DependentUpon>MazeLevel3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MazeLevel4.resx">
+      <DependentUpon>MazeLevel4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MazeLevel5.resx">
+      <DependentUpon>MazeLevel5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MazeLevel6.resx">
+      <DependentUpon>MazeLevel6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

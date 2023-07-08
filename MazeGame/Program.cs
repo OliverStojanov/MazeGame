@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace MazeGame
 {
+    [Serializable]
     internal static class Program
     {
         /// <summary>
